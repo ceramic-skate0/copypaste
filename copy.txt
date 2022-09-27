@@ -1,2 +1,3 @@
-Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3) AppleWebKit/605.1.15 (KHTML,
-like Gecko) Version/15.3 Safari/605.1.15 Edg/100.0.4896.127
+Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3) AppleWebKit/605.1.15 (KHTML,like Gecko) Version/15.3 Safari/605.1.15 Edg/100.0.4896.127
+
+https://login.microsoftonline.com/<DOMAIN>/.well-known/openid-configuration
