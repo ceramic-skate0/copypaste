@@ -1,3 +1,10 @@
 Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3) AppleWebKit/605.1.15 (KHTML,like Gecko) Version/15.3 Safari/605.1.15 Edg/100.0.4896.127
-
+--------------------
 https://login.microsoftonline.com/<DOMAIN>/.well-known/openid-configuration
+---------------------
+$password = ConvertTo-SecureString "CLIENT_SECRET" -AsPlainText -Force
+
+$creds = New-Object System.Management.Automation.PSCredential ("CLIENT_ID", $password)
+
+Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant TENANT_ID
+---------------------
