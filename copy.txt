@@ -16,3 +16,9 @@ Publish-AzAutomationRunbook -RunbookName <NAME> -AutomationAccountName <The Name
 
 Start-AzAutomationRunbook -RunbookName <NAME> -RunOn <Hybrid Worker Group> -AutomationAccountName <The Name of the Automation Account> -ResourceGroupName <Automation Account RG> -Verbose
 ---
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{ 'Authorization' = "Bearer $Token" } }
+(Invoke-RestMethod @RequestParams).value
+---
