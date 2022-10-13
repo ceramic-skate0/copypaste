@@ -22,3 +22,8 @@ Uri = $URI
 Headers = @{ 'Authorization' = "Bearer $Token" } }
 (Invoke-RestMethod @RequestParams).value
 ---
+$password = "NEW_PASS" | ConvertTo-SecureString -AsPlainText
+-Force
+(Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq
+"USER_EMAIL"}).ObjectId |
+Set-AzureADUserPassword -Password $Password -Verbose
