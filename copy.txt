@@ -27,3 +27,5 @@ $password = "NEW_PASS" | ConvertTo-SecureString -AsPlainText
 (Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq
 "USER_EMAIL"}).ObjectId |
 Set-AzureADUserPassword -Password $Password -Verbose
+-----
+gfez94skznm-a90za12sk93za
