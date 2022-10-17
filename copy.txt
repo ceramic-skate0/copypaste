@@ -29,3 +29,11 @@ $password = "NEW_PASS" | ConvertTo-SecureString -AsPlainText
 Set-AzureADUserPassword -Password $Password -Verbose
 -----
 gfez94skznm-a90za12sk93za
+-----------
+$AdminUserName = "Steve@crescent.com"
+$AdminPassword = "Password goes here"
+  
+$SecurePassword = ConvertTo-SecureString $AdminPassword -AsPlainText -Force
+$Credential = New-Object System.Management.Automation.PSCredential -argumentlist $AdminUserName, $SecurePassword
+   
+Connect-AzureAD –Credential $Credential
